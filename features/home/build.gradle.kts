@@ -47,8 +47,4 @@ dependencies {
     implementation(Dependencies.AndroidX.constraintLayout)
     implementation(Dependencies.AndroidX.navFragment)
     implementation(Dependencies.AndroidX.navUi)
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 }
