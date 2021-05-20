@@ -1,4 +1,15 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_wind">Wind</string>
+    <string name="home_pressure">Pressure</string>
+    <string name="home_humidity">Humidity</string>
+    <string name="home_sunrice">Sunrice</string>
+    <string name="home_sunset">Sunset</string>
+    <string name="home_geo_coords">Geo coords</string>
+    <string name="home_degree_with_c">%.2f%n C</string>
+    <string name="home_weather_in_with_text">Weather in %1$s</string>
+    <string name="home_speed_and_deg_with_text">Speed %1$d Deg %2$d</string>
+    <string name="home_hpa_with_text">%1$d hpa</string>
+
 </resources>

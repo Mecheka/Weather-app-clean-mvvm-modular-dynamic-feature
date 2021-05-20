@@ -45,12 +45,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    dynamicFeatures = mutableSetOf(":features:home")
 }
 
 dependencies {
 
+    implementation(project(":features:home"))
     implementation(project(":data"))
     implementation(project(":domain"))
 
@@ -60,12 +59,8 @@ dependencies {
     implementation(Dependencies.AndroidX.coreKtx)
     implementation(Dependencies.AndroidX.constraintLayout)
     implementation(Dependencies.Material.material)
-    implementation(Dependencies.Dexter.dexter)
-    implementation(Dependencies.GoogleService.location)
     implementation(Dependencies.Coroutines.coroutines)
-    implementation(Dependencies.Glide.glide)
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.3.5")
-    kapt(Dependencies.Glide.glideCompiler)
+    implementation(Dependencies.AndroidX.dynamicFeature)
     implementation(Dependencies.Koin.koinAndroid)
     implementation(Dependencies.Koin.koinExt)
     implementation(Dependencies.AndroidX.navFragment)

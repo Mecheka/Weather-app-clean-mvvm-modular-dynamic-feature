@@ -13,6 +13,11 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application/>
+    <application>
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name="com.karumi.dexter.DexterActivity"
+            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+    </application>
 
 </manifest>

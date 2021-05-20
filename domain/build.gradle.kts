@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(Dependencies.Kotlin.stdlib)
     implementation(Dependencies.GoogleService.location)
     implementation(Dependencies.Coroutines.coroutines)

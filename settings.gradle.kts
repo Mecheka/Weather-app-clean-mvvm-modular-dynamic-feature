@@ -5,3 +5,4 @@ include(
     ":domain"
 )
 include(":features:home")
+include(":core")

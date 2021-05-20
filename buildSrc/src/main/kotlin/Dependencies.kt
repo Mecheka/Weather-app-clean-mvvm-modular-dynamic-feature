@@ -10,6 +10,8 @@ object Dependencies {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
         const val navFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
         const val navUi = "androidx.navigation:navigation-ui-ktx:${Versions.nav}"
+        const val dynamicFeature = "androidx.navigation:navigation-dynamic-features-fragment:2.3.5"
+        const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
     }
 
     object Material {
@@ -47,5 +49,9 @@ object Dependencies {
         const val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
         const val koinExt = "io.insert-koin:koin-androidx-ext:${Versions.koin}"
         const val koinViewModel = "io.insert-koin:koin-androidx-viewmodel:${Versions.koin}"
+    }
+
+    object EasyPermissions {
+        const val easyPermissions = "pub.devrel:easypermissions:${Versions.easyPermission}"
     }
 }

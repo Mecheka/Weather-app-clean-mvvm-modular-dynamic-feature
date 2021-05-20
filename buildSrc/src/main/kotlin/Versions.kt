@@ -10,7 +10,7 @@ object Versions {
 
     const val material = "1.3.0"
 
-    const val dexter = "6.2.2"
+    const val dexter = "6.0.2"
 
     const val gmsLocation = "18.0.0"
 
@@ -25,4 +25,8 @@ object Versions {
     const val koin = "2.2.2"
 
     const val nav = "2.3.5"
+
+    const val viewpager2 = "1.0.0"
+
+    const val easyPermission = "3.0.0"
 }
