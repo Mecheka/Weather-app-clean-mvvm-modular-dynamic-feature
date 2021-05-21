@@ -1,4 +1,4 @@
-package com.example.data.network.model
+package com.example.data.network.model.weather
 
 
 import com.google.gson.annotations.SerializedName
@@ -16,6 +16,8 @@ data class MainResponse(
     val seaLevel: Int?,
     @SerializedName("temp")
     val temp: Double?,
+    @SerializedName("temp_kf")
+    val tempKf: Double?,
     @SerializedName("temp_max")
     val tempMax: Double?,
     @SerializedName("temp_min")

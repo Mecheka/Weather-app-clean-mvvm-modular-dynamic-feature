@@ -1,4 +1,4 @@
-package com.example.data.network.model
+package com.example.data.network.model.weather
 
 
 import com.google.gson.annotations.SerializedName
@@ -13,5 +13,7 @@ data class SysResponse(
     @SerializedName("sunset")
     val sunset: Int?,
     @SerializedName("type")
-    val type: Int?
+    val type: Int?,
+    @SerializedName("pod")
+    val pod: String?
 )

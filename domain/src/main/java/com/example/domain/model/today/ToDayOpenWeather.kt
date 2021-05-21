@@ -1,6 +1,8 @@
-package com.example.domain.model
+package com.example.domain.model.today
 
-data class OpenWeather(
+import com.example.domain.model.*
+
+data class ToDayOpenWeather(
     val base: String?,
     val clouds: Clouds?,
     val cod: Int?,

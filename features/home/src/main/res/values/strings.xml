@@ -11,5 +11,6 @@
     <string name="home_weather_in_with_text">Weather in %1$s</string>
     <string name="home_speed_and_deg_with_text">Speed %1$d Deg %2$d</string>
     <string name="home_hpa_with_text">%1$d hpa</string>
+    <string name="home_five_days_weather_forecast">5 DAYS WEATHER FORECAST</string>
 
 </resources>

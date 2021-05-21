@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.example.home.HomeActivity"
+        android:name="com.example.home.ui.WeatherHomeActivity"
         app:moduleName="Weather_app.features.home"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />

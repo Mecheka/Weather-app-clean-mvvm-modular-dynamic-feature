@@ -50,8 +50,4 @@ object Dependencies {
         const val koinExt = "io.insert-koin:koin-androidx-ext:${Versions.koin}"
         const val koinViewModel = "io.insert-koin:koin-androidx-viewmodel:${Versions.koin}"
     }
-
-    object EasyPermissions {
-        const val easyPermissions = "pub.devrel:easypermissions:${Versions.easyPermission}"
-    }
 }

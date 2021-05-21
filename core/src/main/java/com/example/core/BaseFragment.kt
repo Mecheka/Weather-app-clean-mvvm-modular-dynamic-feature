@@ -16,7 +16,7 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
 
     lateinit var binding: B
     protected abstract fun setupBinding(): B
-    private val loadingDialog: DialogLoading by lazy { DialogLoading() }
+    private var loadingDialog: DialogLoading? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +44,9 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
                     AlertDialog.Builder(requireContext())
                         .setTitle("Error")
                         .setMessage(it.error.message)
-                        .setPositiveButton("ok", DialogInterface.OnClickListener { dialog, _ ->
+                        .setPositiveButton("ok") { dialog, _ ->
                             dialog.dismiss()
-                        }).show()
+                        }.show()
                 }
                 is DataEntity.LOADING -> showLoadingDialog()
                 is DataEntity.SUCCESS -> {
@@ -57,12 +57,13 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
         }
     }
 
-    private fun showLoadingDialog() {
-        loadingDialog.isCancelable = false
-        loadingDialog.show(childFragmentManager, "Loading dialog")
+    open fun showLoadingDialog() {
+        loadingDialog = DialogLoading()
+        loadingDialog?.isCancelable = false
+        loadingDialog?.show(childFragmentManager, "Loading dialog")
     }
 
-    private fun hideLoadingDialog() {
-        loadingDialog.dismiss()
+    open fun hideLoadingDialog() {
+        loadingDialog?.dismiss()
     }
 }

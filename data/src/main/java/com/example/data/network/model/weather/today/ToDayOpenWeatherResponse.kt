@@ -1,10 +1,12 @@
-package com.example.data.network.model
+package com.example.data.network.model.weather.today
 
 
+import com.example.data.network.model.weather.*
 import com.example.domain.model.*
+import com.example.domain.model.today.ToDayOpenWeather
 import com.google.gson.annotations.SerializedName
 
-data class OpenWeatherResponse(
+data class ToDayOpenWeatherResponse(
     @SerializedName("base")
     val base: String?,
     @SerializedName("clouds")
@@ -33,7 +35,7 @@ data class OpenWeatherResponse(
     val wind: WindResponse?
 ) {
 
-    fun mapToDomain() = OpenWeather(
+    fun mapToDomain() = ToDayOpenWeather(
         base = base,
         clouds = Clouds(cloudsResponse?.all),
         cod = cod,

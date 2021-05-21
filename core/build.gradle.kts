@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
-    id("kotlin-android")
+    kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -47,4 +48,6 @@ dependencies {
     implementation(Dependencies.Koin.koinExt)
     implementation(Dependencies.Koin.koinAndroid)
     implementation(Dependencies.Koin.koinViewModel)
+    implementation(Dependencies.Glide.glide)
+    kapt(Dependencies.Glide.glideCompiler)
 }

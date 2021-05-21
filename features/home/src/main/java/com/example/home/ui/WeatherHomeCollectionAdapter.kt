@@ -1,11 +1,11 @@
-package com.example.home
+package com.example.home.ui
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class HomeCollectionAdapter(activity: FragmentManager, lifecycle: Lifecycle) :
+class WeatherHomeCollectionAdapter(activity: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(activity, lifecycle) {
 
     private val fragmentList = mutableListOf<Fragment>()

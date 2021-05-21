@@ -27,6 +27,4 @@ object Versions {
     const val nav = "2.3.5"
 
     const val viewpager2 = "1.0.0"
-
-    const val easyPermission = "3.0.0"
 }
