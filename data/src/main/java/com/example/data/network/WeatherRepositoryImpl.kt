@@ -52,4 +52,22 @@ class WeatherRepositoryImpl(private val service: OpenWeatherService) : WeatherRe
             emit(DataEntity.ERROR(ErrorEntity(e.message)))
         }
     }
+
+    override suspend fun getWeatherByCityName(city: String): Flow<DataEntity<ToDayOpenWeather>> = flow {
+        emit(DataEntity.LOADING)
+        try {
+            val response = service.getWeatherByLocation(city, BuildConfig.API_KEY, "metric")
+            if (response.isSuccessful) {
+                emit(
+                    DataEntity.SUCCESS(
+                        response.body()?.mapToDomain()
+                    )
+                )
+            } else {
+                emit(DataEntity.ERROR(ErrorEntity(response.message())))
+            }
+        } catch (e: Exception) {
+            emit(DataEntity.ERROR(ErrorEntity(e.message)))
+        }
+    }
 }

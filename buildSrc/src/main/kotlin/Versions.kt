@@ -9,6 +9,7 @@ object Versions {
     const val viewModel = "2.3.1"
 
     const val material = "1.3.0"
+    const val materialDialog = "0.8.5"
 
     const val dexter = "6.0.2"
 

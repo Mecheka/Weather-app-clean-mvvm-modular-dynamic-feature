@@ -7,8 +7,10 @@ import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
 import android.os.Looper
+import androidx.lifecycle.lifecycleScope
 import com.example.core.BaseActivity
 import com.example.home.databinding.ActivityHomeBinding
+import com.example.home.ui.city.CityWeatherFragment
 import com.example.home.ui.fiveday.FiveDayWeatherFragment
 import com.example.home.ui.today.TodayWeatherFragment
 import com.google.android.gms.common.api.ResolvableApiException
@@ -20,8 +22,15 @@ import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.io.IOException
+import java.nio.charset.Charset
 import java.util.*
 
 @FlowPreview
@@ -50,6 +59,9 @@ class WeatherHomeActivity : BaseActivity() {
         fusedLocationClient =
             LocationServices.getFusedLocationProviderClient(this@WeatherHomeActivity)
         setupView()
+        lifecycleScope.launch {
+            loadCityListAssets().flowOn(Dispatchers.IO).collect { viewModel.setupCityList(it) }
+        }
     }
 
     override fun onStart() {
@@ -65,18 +77,9 @@ class WeatherHomeActivity : BaseActivity() {
         fusedLocationClient.removeLocationUpdates(locationCallback)
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == CHECK_LOCATION_SETTING) {
-//            getWeatherByLastLocation()
-//        }
-//    }
-
     private fun setupView() {
         showLoadingDialog()
         setSupportActionBar(binding.toolBar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupViewPager()
     }
@@ -87,11 +90,28 @@ class WeatherHomeActivity : BaseActivity() {
             tab.text = when (position) {
                 0 -> "Today"
                 1 -> "Five day"
+                2 -> "City"
                 else -> "Un know"
             }
         }.attach()
         weatherHomeFragmentAdapter.addFragment(TodayWeatherFragment())
         weatherHomeFragmentAdapter.addFragment(FiveDayWeatherFragment())
+        weatherHomeFragmentAdapter.addFragment(CityWeatherFragment())
+    }
+
+    private suspend fun loadCityListAssets() = flow {
+        val json: String
+        try {
+            val input = assets.open("city_list.json")
+            val size = input.available()
+            val buffer = ByteArray(size)
+            input.read(buffer)
+            input.close()
+            json = String(buffer, Charset.forName("UTF-8"))
+            emit(json)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
 
     private fun checkLocationPermission() {

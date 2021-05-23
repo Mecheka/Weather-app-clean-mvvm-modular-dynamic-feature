@@ -8,5 +8,5 @@ import org.koin.dsl.module
 @FlowPreview
 val homeFeatureModule = module {
 
-    viewModel { WeatherViewModel(get(), get()) }
+    viewModel { WeatherViewModel(get(), get(), get()) }
 }

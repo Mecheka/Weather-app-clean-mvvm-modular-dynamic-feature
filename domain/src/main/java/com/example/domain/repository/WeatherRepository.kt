@@ -10,4 +10,6 @@ interface WeatherRepository {
     suspend fun getWeatherByLocation(lat: Double, lon: Double): Flow<DataEntity<ToDayOpenWeather>>
 
     suspend fun getForecastByLocation(lat: Double, lon: Double): Flow<DataEntity<FiveDayOpenWeather>>
+
+    suspend fun getWeatherByCityName(city: String): Flow<DataEntity<ToDayOpenWeather>>
 }

@@ -16,6 +16,7 @@ object Dependencies {
 
     object Material {
         const val material = "com.google.android.material:material:${Versions.material}"
+        const val materialSearch = "com.github.mancj:MaterialSearchBar:${Versions.materialDialog}"
     }
 
     object Dexter {

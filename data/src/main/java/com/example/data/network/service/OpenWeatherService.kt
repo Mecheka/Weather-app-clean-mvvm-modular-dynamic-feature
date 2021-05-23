@@ -23,4 +23,11 @@ interface OpenWeatherService {
         @Query("appid") apiKey: String,
         @Query("units") units: String
     ): Response<FiveDayOpenWeatherResponse>
+
+    @GET("weather")
+    suspend fun getWeatherByLocation(
+        @Query("q") city: String,
+        @Query("appid") apiKey: String,
+        @Query("units") units: String
+    ): Response<ToDayOpenWeatherResponse>
 }

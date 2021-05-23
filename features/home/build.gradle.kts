@@ -1,5 +1,6 @@
 plugins {
 //    id("com.android.dynamic-feature")
+    id(BuildPlugin.checkUpdateDependency)
     id("com.android.library")
     id("kotlin-android")
     kotlin("android.extensions")
@@ -63,4 +64,6 @@ dependencies {
     implementation(Dependencies.AndroidX.viewpager2)
     implementation(Dependencies.Glide.glide)
     kapt(Dependencies.Glide.glideCompiler)
+    implementation(Dependencies.Gson.gson)
+    implementation(Dependencies.Material.materialSearch)
 }
