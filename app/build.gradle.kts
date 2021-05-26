@@ -1,5 +1,3 @@
-import com.android.builder.internal.ClassFieldImpl
-
 plugins {
     id(BuildPlugin.checkUpdateDependency)
     id("com.android.application")

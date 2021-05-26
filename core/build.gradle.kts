@@ -1,4 +1,5 @@
 plugins {
+    id(BuildPlugin.checkUpdateDependency)
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
@@ -50,4 +51,6 @@ dependencies {
     implementation(Dependencies.Koin.koinViewModel)
     implementation(Dependencies.Glide.glide)
     kapt(Dependencies.Glide.glideCompiler)
+    implementation("com.squareup.picasso:picasso:2.71828")
+    implementation(Dependencies.Retrofit.retrofit)
 }

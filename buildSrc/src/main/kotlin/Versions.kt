@@ -6,7 +6,6 @@ object Versions {
     const val coreKtx = "1.3.2"
     const val appcompat = "1.3.0-alpha01"
     const val constraintLayout = "2.0.4"
-    const val viewModel = "2.3.1"
 
     const val material = "1.3.0"
     const val materialDialog = "0.8.5"

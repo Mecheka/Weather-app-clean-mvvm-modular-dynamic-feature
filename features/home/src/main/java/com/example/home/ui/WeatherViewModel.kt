@@ -37,7 +37,7 @@ class WeatherViewModel(
     val weatherByCityLiveData: LiveData<DataEntity<ToDayOpenWeather>>
         get() = _weatherByCityLiveData
 
-    var currentLocation: Address? = null
+    private var currentLocation: Address? = null
 
     fun getWeather(address: Address) {
         viewModelScope.launch {

@@ -13,7 +13,6 @@ import com.example.home.ui.WeatherViewModel
 import com.example.home.utils.DateTimeUtil
 import com.example.home.utils.doOnAfterTextChange
 import com.example.home.utils.doOnConfirm
-import com.example.home.utils.doOnSuggestClick
 import kotlinx.coroutines.FlowPreview
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

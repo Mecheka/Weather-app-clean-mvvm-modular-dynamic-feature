@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.core.BaseFragment
-import com.example.home.R
 import com.example.home.databinding.FragmentFiveDayWeatherBinding
 import com.example.home.ui.WeatherViewModel
 import kotlinx.coroutines.FlowPreview

@@ -3,9 +3,6 @@ package com.example.home.ui.today
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import com.bumptech.glide.Glide
-import com.bumptech.glide.TransitionOptions
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.core.BaseFragment
 import com.example.core.utils.loadImageUrl
 import com.example.home.BuildConfig
